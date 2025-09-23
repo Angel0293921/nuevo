@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hola en HTML</title>
+  <style>
+    body { font-family: Arial, sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; margin:0; }
+    .card { text-align:center; padding:2rem; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+    button { margin-top:1rem; padding:0.5rem 1rem; border-radius:8px; border:0; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="saludo">¡Hola, mundo!</h1>
+    <p>Un ejemplo simple en HTML + JavaScript.</p>
+    <button id="boton">Cambiar saludo</button>
+  </div>
+
+  <script>
+    const saludo = document.getElementById('saludo');
+    const boton = document.getElementById('boton');
+
+    const saludos = ['¡Hola, mundo!', '¡Qué tal!', '¡Hola Luis Ángel!', '¡Saludos desde HTML!'];
+    let i = 0;
+
+    boton.addEventListener('click', () => {
+      i = (i + 1) % saludos.length;
+      saludo.textContent = saludos[i];
+    });
+  </script>
+</body>
+</html>
